@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velocity Rail | Journey on Tracks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Staatliches&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body, html { height: 100vh; overflow: hidden; font-family: 'Space Grotesk', sans-serif; background: #1b1d1e; }
+
+        .train-wrapper {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Railway Track View Background */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1474487548417-781cb71495f3?q=80&w=2184') no-repeat center center/cover;
+            padding: 20px;
+        }
+
+        .main-card {
+            width: 95%;
+            max-width: 1200px;
+            height: 80vh;
+            background: #fff;
+            border-radius: 4px; /* Industrial sharp edges */
+            display: flex;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+            overflow: hidden;
+            position: relative;
+            border-bottom: 10px solid #003566;
+        }
+
+        /* Movement Lines Decoration */
+        .main-card::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: repeating-linear-gradient(90deg, #003566, #003566 20px, transparent 20px, transparent 40px);
+            opacity: 0.1;
+        }
+
+        /* Left Side: Content */
+        .info-panel {
+            flex: 1;
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #fff;
+            z-index: 5;
+        }
+
+        .platform-tag {
+            color: #003566;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h1 {
+            font-family: 'Staatliches', cursive;
+            font-size: 6rem;
+            line-height: 0.9;
+            color: #1b1d1e;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        h1 span {
+            color: #003566;
+            display: block;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 45px;
+            font-size: 1.1rem;
+            max-width: 420px;
+        }
+
+        .ticket-btn {
+            padding: 22px 55px;
+            background: #003566;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.4s;
+            width: fit-content;
+            border-radius: 2px;
+        }
+
+        .ticket-btn:hover {
+            background: #ffc300;
+            color: #003566;
+            transform: translateX(15px);
+            box-shadow: -15px 0 0 #003566;
+        }
+
+        /* Right Side: Train Image */
+        .visual-panel {
+            flex: 1.4;
+            position: relative;
+            background: #003566;
+            overflow: hidden;
+        }
+
+        .train-pic {
+            width: 100%;
+            height: 100%;
+            /* Modern Bullet Train Image */
+            background: url('https://images.unsplash.com/photo-1532105956626-9569c03602f6?q=80&w=1974') no-repeat center center/cover;
+            transition: 2s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+
+        .main-card:hover .train-pic {
+            transform: scale(1.1) translateX(30px);
+        }
+
+        .arrival-badge {
+            position: absolute;
+            bottom: 40px;
+            right: 0;
+            background: #ffc300;
+            color: #003566;
+            padding: 15px 40px;
+            font-weight: 900;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="train-wrapper">
+        <div class="main-card">
+            <div class="info-panel">
+                <div class="platform-tag">Departing from Platform 09</div>
+                <h1>Velocity<span>Express.</span></h1>
+                <p>Pattriyon par raftaar ka naya safar. Hamari high-speed trains apko manzil tak pohanchayein aaram aur waqt ki pabandi ke saath.</p>
+                <a href="#" class="ticket-btn">Reserve Seat</a>
+            </div>
+
+            <div class="visual-panel">
+                <div class="train-pic"></div>
+                <div class="arrival-badge">ON TIME ARRIVAL</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
